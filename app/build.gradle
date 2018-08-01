@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+
+task androidXml2Java(type: Exec)  {
+    commandLine 'AndroidXml2Java'
+}
+build.dependsOn androidXml2Java
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mardomsara.social"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a" //,"x86"//, "x86"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "String", "API_URL", "\"http://localhost:5555\""
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //compile project(path: ':proto', configuration: 'default') later
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportVersion"
+    implementation "com.android.support:support-v13:$rootProject.ext.supportVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportVersion"
+//    implementation "com.android.support:percent:$rootProject.ext.supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+//    compile "com.android.support:support-core-utils:$rootProject.ext.supportVersion"
+
+
+    implementation 'com.facebook.fresco:fresco:1.3.0'
+    implementation 'com.facebook.fresco:animated-gif:1.3.0'
+    implementation 'com.facebook.fresco:animated-webp:1.3.0'
+    implementation 'com.facebook.fresco:webpsupport:1.3.0'
+//    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    //later
+//    implementation 'com.google.code.gson:gson:2.8.1'
+//    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+//    implementation 'org.greenrobot:eventbus:3.0.0'
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
