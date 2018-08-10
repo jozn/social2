@@ -15,7 +15,7 @@ import com.mardomsara.social.nav.Nav;
 public class MainNewAppActivity extends AppBaseActivity {
 	public static MainNewAppActivity instance;
 
-	public ViewGroup global_window;
+	public static ViewGroup global_window;
 	@Override
 	public void onBackPressed() {
 		if(!Nav.onBackPressed()){

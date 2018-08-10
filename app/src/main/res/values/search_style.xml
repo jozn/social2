@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="search_presenter_search_filed" parent="text.normal.black" >
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:background">@drawable/chat_input_border2</item>
+    </style>
+
+</resources>

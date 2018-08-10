@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="settings_block_separator_background">@color/border_gray</color>
+    <style name="settings">
+
+    </style>
+
+    <style name="settings.row">
+        <!--<item name="fontPath">@string/font_iran</item>-->
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="settings.row_note">
+        <!--<item name="fontPath">@string/font_iran_light</item>-->
+        <item name="android:textColor">@color/text_gray_1</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="settings.info">
+        <!--<item name="fontPath">@string/font_iran_light</item>-->
+        <item name="android:textColor">@color/text_gray_2</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+    </style>
+
+    <style name="settings.arrow">
+        <!--<item name="fontPath">@string/font_ionic</item>-->
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">@color/text_black_5</item>
+    </style>
+
+
+</resources>

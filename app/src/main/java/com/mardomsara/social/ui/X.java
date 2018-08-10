@@ -11,7 +11,12 @@ import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.mardomsara.social.ui.views.XRawIcon;
+import com.mardomsara.social.ui.views.buttons.ButtonPostMultiWayView;
+import com.mardomsara.social.ui.views.x.XTextView;
+import com.mardomsara.x.iconify.widget.XIcon;
 
 //import com.mardomsara.social.helpers.AppUtil;
 import com.mardomsara.social.R;
@@ -147,6 +152,33 @@ public class X {
         }
     }
 
+    public static class ButtonPostMultiway {
+        public ButtonPostMultiWayView root;
+
+        public ButtonPostMultiway(Context context,ViewGroup parent) {
+            this(context,parent, R.layout.button_post_multiway );
+        }
+
+        public ButtonPostMultiway(Context context,ViewGroup parent, int layout) {
+            root = (ButtonPostMultiWayView) LayoutInflater.from(context).inflate(layout,parent ,false);
+        }
+        /*public ButtonPostMultiway() {
+            this(AppUtil.getContext(),null);
+        }*/
+
+        public ButtonPostMultiway(Context context) {
+            this(context ,null);
+        }
+
+        public ButtonPostMultiway(ViewGroup parent) {
+            this(parent.getContext() ,parent);
+        }
+
+        public static class IDS {
+            public static int LAYOUT = R.layout.button_post_multiway;
+        }
+    }
+
     public static class FragmentFooterBar {
         public LinearLayout root;
         public XRawIcon profile;
@@ -252,6 +284,36 @@ public class X {
         }
     }
 
+    public static class Loading {
+        public FrameLayout root;
+        public CircularProgressView loading;
+
+        public Loading(Context context,ViewGroup parent) {
+            this(context,parent, R.layout.loading );
+        }
+
+        public Loading(Context context,ViewGroup parent, int layout) {
+            root = (FrameLayout) LayoutInflater.from(context).inflate(layout,parent ,false);
+            loading = (CircularProgressView) root.findViewById( R.id.loading);
+        }
+        /*public Loading() {
+            this(AppUtil.getContext(),null);
+        }*/
+
+        public Loading(Context context) {
+            this(context ,null);
+        }
+
+        public Loading(ViewGroup parent) {
+            this(parent.getContext() ,parent);
+        }
+
+        public static class IDS {
+            public static int LAYOUT = R.layout.loading;
+            public static int loading = R.id.loading;
+        }
+    }
+
     public static class MainBranchChat {
         public LinearLayout root;
         public TabLayout sliding_tabs;
@@ -285,6 +347,39 @@ public class X {
         }
     }
 
+    public static class Msg_MediaNetworkLoader {
+        public ViewGroup root;
+        public SimpleDraweeView msg_image;
+        public FrameLayout loading_holder;
+        public XRawIcon icon_action_btn;
+        public CircularProgressView loading_progress;
+
+        public Msg_MediaNetworkLoader(Context context,ViewGroup parent) {
+            this(context,parent, R.layout.msg__media_network_loader );
+        }
+
+        public Msg_MediaNetworkLoader(Context context,ViewGroup parent, int layout) {
+            root = (ViewGroup) LayoutInflater.from(context).inflate(layout,parent,true);//for Compound Views
+            
+            msg_image = (SimpleDraweeView) root.findViewById( R.id.msg_image);
+            loading_holder = (FrameLayout) root.findViewById( R.id.loading_holder);
+            icon_action_btn = (XRawIcon) root.findViewById( R.id.icon_action_btn);
+            loading_progress = (CircularProgressView) root.findViewById( R.id.loading_progress);
+        }//Compound Views Must have parent otherwise will panic
+
+        public Msg_MediaNetworkLoader(ViewGroup parent) {
+            this(parent.getContext() ,parent);
+        }
+
+        public static class IDS {
+            public static int LAYOUT = R.layout.msg__media_network_loader;
+            public static int msg_image = R.id.msg_image;
+            public static int loading_holder = R.id.loading_holder;
+            public static int icon_action_btn = R.id.icon_action_btn;
+            public static int loading_progress = R.id.loading_progress;
+        }
+    }
+
     public static class Nav_IconHolder {
         public FrameLayout root;
         public TextView icon_text;
@@ -312,6 +407,36 @@ public class X {
         public static class IDS {
             public static int LAYOUT = R.layout.nav__icon_holder;
             public static int icon_text = R.id.icon_text;
+        }
+    }
+
+    public static class Nav_Simple {
+        public ViewGroup root;
+        public TextView left_text;
+        public XTextView title_text;
+        public XIcon back_btn;
+
+        public Nav_Simple(Context context,ViewGroup parent) {
+            this(context,parent, R.layout.nav__simple );
+        }
+
+        public Nav_Simple(Context context,ViewGroup parent, int layout) {
+            root = (ViewGroup) LayoutInflater.from(context).inflate(layout,parent,true);//for Compound Views
+            
+            left_text = (TextView) root.findViewById( R.id.left_text);
+            title_text = (XTextView) root.findViewById( R.id.title_text);
+            back_btn = (XIcon) root.findViewById( R.id.back_btn);
+        }//Compound Views Must have parent otherwise will panic
+
+        public Nav_Simple(ViewGroup parent) {
+            this(parent.getContext() ,parent);
+        }
+
+        public static class IDS {
+            public static int LAYOUT = R.layout.nav__simple;
+            public static int left_text = R.id.left_text;
+            public static int title_text = R.id.title_text;
+            public static int back_btn = R.id.back_btn;
         }
     }
 
@@ -345,6 +470,39 @@ public class X {
             public static int LAYOUT = R.layout.tab_cell_general;
             public static int textView = R.id.textView;
             public static int imgView = R.id.imgView;
+        }
+    }
+
+    public static class X_TopNav {
+        public ViewGroup root;
+        public LinearLayout left_container;
+        public XTextView left_text;
+        public XTextView title_text;
+        public XIcon back_btn;
+
+        public X_TopNav(Context context,ViewGroup parent) {
+            this(context,parent, R.layout.x__top_nav_ );
+        }
+
+        public X_TopNav(Context context,ViewGroup parent, int layout) {
+            root = (ViewGroup) LayoutInflater.from(context).inflate(layout,parent,true);//for Compound Views
+            
+            left_container = (LinearLayout) root.findViewById( R.id.left_container);
+            left_text = (XTextView) root.findViewById( R.id.left_text);
+            title_text = (XTextView) root.findViewById( R.id.title_text);
+            back_btn = (XIcon) root.findViewById( R.id.back_btn);
+        }//Compound Views Must have parent otherwise will panic
+
+        public X_TopNav(ViewGroup parent) {
+            this(parent.getContext() ,parent);
+        }
+
+        public static class IDS {
+            public static int LAYOUT = R.layout.x__top_nav_;
+            public static int left_container = R.id.left_container;
+            public static int left_text = R.id.left_text;
+            public static int title_text = R.id.title_text;
+            public static int back_btn = R.id.back_btn;
         }
     }
 

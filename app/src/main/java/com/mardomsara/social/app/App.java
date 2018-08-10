@@ -26,28 +26,34 @@ import java.util.concurrent.Executors;
 
 //copy all funcs from App and and AppUtil
 public class App {
+
 	public static Context context;
 	private static ExecutorService _threadPool;
 	private static ExecutorService _threadSingle;
 
+	public static Context getContext() {
+		return context;
+	}
 
-	public static void log(String str){
-		Log.d(Thread.currentThread().getName(),""+ str);
+	public static void log(String str) {
+		Log.d(Thread.currentThread().getName(), "" + str);
 	}
-	public static void log(Object obj){
+
+	public static void log(Object obj) {
 //		Log.d(Thread.currentThread().getName(),""+ toJson(obj));
-		Log.d(Thread.currentThread().getName(),""+ obj.toString());
+		Log.d(Thread.currentThread().getName(), "" + obj.toString());
 	}
-	public static void error(String str){
+
+	public static void error(String str) {
 		Log.e(Thread.currentThread().getName(), "" + str);
 	}
 
-	public static long getTimeMs(){
+	public static long getTimeMs() {
 		return new Date().getTime();
 	}
 
-	public static long getTime(){
-		return (new Date().getTime())/1000;
+	public static long getTime() {
+		return (new Date().getTime()) / 1000;
 	}
 
 	public static void showDebugMessage(final String text) {
@@ -82,14 +88,13 @@ public class App {
 		});
 	}
 
-	public static void runInUiWithSleep(final Runnable r, final int sleep)
-	{
-		new AsyncTask<Void,Void,Void>(){
+	public static void runInUiWithSleep(final Runnable r, final int sleep) {
+		new AsyncTask<Void, Void, Void>() {
 			@Override
 			protected Void doInBackground(Void... params) {
 				try {
 					Thread.sleep(sleep);
-				}catch (Exception e){
+				} catch (Exception e) {
 				}
 				return null;
 			}
@@ -102,17 +107,17 @@ public class App {
 		}.executeOnExecutor(getThreadPool());
 	}
 
-	public static void runInBackground(Runnable r){
+	public static void runInBackground(Runnable r) {
 		getThreadPool().execute(r);
 	}
 
-	public static void runInBackgroundNoPanic(final Runnable r){
+	public static void runInBackgroundNoPanic(final Runnable r) {
 		Runnable runner = new Runnable() {
 			@Override
 			public void run() {
 				try {
 					r.run();
-				}catch (Exception e){
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -122,10 +127,11 @@ public class App {
 	}
 
 
-	public static int getAndroidSdkVersion(){
+	public static int getAndroidSdkVersion() {
 		return Build.VERSION.SDK_INT;
 	}
-	public static int getAppVersion(){
+
+	public static int getAppVersion() {
 		try {
 			return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
 		} catch (PackageManager.NameNotFoundException e) {
@@ -135,20 +141,20 @@ public class App {
 	}
 
 
-	public static String getString(int id){
+	public static String getString(int id) {
 		return context.getResources().getString(id);
 	}
 
-	public static Drawable getDrawable(int id){
+	public static Drawable getDrawable(int id) {
 		return context.getResources().getDrawable(id);
 	}
 
-	public static Resources getResources(){
+	public static Resources getResources() {
 		return context.getResources();//
 	}
 
 
-	public static int getColor(@ColorRes int id){
+	public static int getColor(@ColorRes int id) {
 		return context.getResources().getColor(id);//
 	}
 
@@ -164,7 +170,7 @@ public class App {
 		display.getMetrics(metrics);
 		int width = metrics.widthPixels;
 		int height = metrics.heightPixels;
-		return  width;
+		return width;
 	}
 
 	public static int getScreenHeight() {
@@ -175,7 +181,7 @@ public class App {
 		display.getMetrics(metrics);
 		int width = metrics.widthPixels;
 		int height = metrics.heightPixels;
-		return  height;
+		return height;
 	}
 
 	public static String getScreenResolution() {
@@ -198,40 +204,64 @@ public class App {
 		return Resources.getSystem().getDisplayMetrics().density;
 	}
 
-	public static void showKeyboard(EditText edit_filed){
-		if(edit_filed.requestFocus()){
-			InputMethodManager imm =(InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+	public static void showKeyboard(EditText edit_filed) {
+		if (edit_filed.requestFocus()) {
+			InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 			imm.showSoftInput(edit_filed, InputMethodManager.SHOW_IMPLICIT);
 		}
 	}
 
-	public static void hideKeyboard(EditText edit_filed){
-		InputMethodManager imm =(InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+	public static void hideKeyboard(EditText edit_filed) {
+		InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(edit_filed.getWindowToken(), 0);
 	}
 
-	public static View inflate(int id){
-		return LayoutInflater.from(context).inflate(id,null,false);
+	public static View inflate(int id) {
+		return LayoutInflater.from(context).inflate(id, null, false);
 	}
 
-	public static View inflate(int id, ViewGroup parent){
-		return LayoutInflater.from(context).inflate(id,parent,false);
+	public static View inflate(int id, ViewGroup parent) {
+		return LayoutInflater.from(context).inflate(id, parent, false);
 	}
 
-	public static View inflate(int id, ViewGroup parent,boolean attach){
-		return LayoutInflater.from(context).inflate(id,parent,attach);
+	public static View inflate(int id, ViewGroup parent, boolean attach) {
+		return LayoutInflater.from(context).inflate(id, parent, attach);
 	}
+
+	//Can be called from any thread
+	public static void showMessage(final String text) {
+		runInUi(new Runnable() {
+			@Override
+			public void run() {
+				Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
+
+	public static void showMessageShort(final String text) {
+		runInUi(new Runnable() {
+			@Override
+			public void run() {
+				Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
+
+	public static void showCommingSoonMessage() {
+		showMessageShort("به زودی در نسخه های بعد...");
+	}
+
 
 	////////////////////// ThreadPools ///////////
-	public static ExecutorService getThreadPool(){
-		if(_threadPool == null){
+	public static ExecutorService getThreadPool() {
+		if (_threadPool == null) {
 			_threadPool = Executors.newCachedThreadPool();
 		}
 		return _threadPool;
 	}
 
-	public static ExecutorService getSingleThread(){
-		if(_threadSingle == null){
+	public static ExecutorService getSingleThread() {
+		if (_threadSingle == null) {
 			_threadSingle = Executors.newSingleThreadExecutor();
 		}
 		return _threadSingle;
