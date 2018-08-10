@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+             android:clickable="true"
+             android:layout_weight="1"
+
+
+
+    >
+    <!--android:background="@drawable/nav_icon_selector"-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/icon_text"
+        android:paddingTop="0dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        />
+
+</FrameLayout>

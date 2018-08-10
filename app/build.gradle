@@ -8,6 +8,7 @@ apply plugin: 'kotlin-android-extensions'
 task androidXml2Java(type: Exec)  {
     commandLine 'AndroidXml2Java'
 }
+
 build.dependsOn androidXml2Java
 
 android {
@@ -34,6 +35,8 @@ android {
             buildConfigField "String", "API_URL", "\"http://localhost:5555\""
         }
     }
+
+    preBuild.dependsOn androidXml2Java
 }
 
 dependencies {
