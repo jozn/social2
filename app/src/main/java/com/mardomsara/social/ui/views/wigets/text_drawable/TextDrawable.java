@@ -6,7 +6,7 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.graphics.drawable.shapes.RectShape;
 import android.graphics.drawable.shapes.RoundRectShape;
 
-import com.mardomsara.social.ui.views.FontCache;
+import com.mardomsara.x.iconify.FontCache;
 
 /**
  * @author amulya

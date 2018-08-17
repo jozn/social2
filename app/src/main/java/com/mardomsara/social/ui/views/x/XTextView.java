@@ -20,9 +20,10 @@ import com.mardomsara.social.R;
 import com.mardomsara.social.app.App;
 import com.mardomsara.social.helpers.LangUtil;
 //import com.mardomsara.social.lib.AppClickableSpan;
-import com.mardomsara.social.ui.views.FontCache;
+import com.mardomsara.x.iconify.FontCache;
 import com.mardomsara.social.ui.views.helpers.AppClickableSpan;
 import com.mardomsara.social.ui.views.utils.XTextViewUtils;
+import com.mardomsara.x.iconify.IranFonts;
 
 // this class is the master of all Emoji, linker, limiter
 

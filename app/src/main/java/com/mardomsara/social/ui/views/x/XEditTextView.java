@@ -24,7 +24,8 @@ import android.util.AttributeSet;
 
 import com.mardomsara.emojicon.EmojiMaper;
 import com.mardomsara.social.R;
-import com.mardomsara.social.ui.views.FontCache;
+import com.mardomsara.x.iconify.FontCache;
+import com.mardomsara.x.iconify.IranFonts;
 
 // a copy of EmojiconEditText -- just added font and styalable to XEditTextView
 //// TODO: 3/21/2017 not all styleable works

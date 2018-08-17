@@ -128,7 +128,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/emojis_backspace"
-            android:tint="@color/light_blue_6"
+            android:tint="#e6e6f7"
             android:src="@drawable/sym_keyboard_delete_holo_dark" />
     </LinearLayout>
 

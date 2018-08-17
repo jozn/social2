@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MS_Native</string>
-    <string name="ionic_font">iconify/android-iconify-ionicons.ttf</string>
+<!--    <string name="ionic_font">iconify/android-iconify-ionicons.ttf</string>
     <string name="font_ionic">iconify/android-iconify-ionicons.ttf</string>
     <string name="font_linear">fonts/linear.ttf</string>
     <string name="linear_font">fonts/linear.ttf</string>
@@ -8,7 +8,7 @@
     <string name="font_iran_light">fonts/IRAN_Sans_Light.ttf</string>
     <string name="font_iran_bold">fonts/IRAN_Sans_Bold.ttf</string>
     <string name="font_iran_ultraLight">fonts/IRAN_Sans_UltraLight.ttf</string>
-    <string name="font_iran">fonts/IRAN_Sans.ttf</string>
+    <string name="font_iran">fonts/IRAN_Sans.ttf</string>-->
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_test_contacts">TestContactsActivity</string>

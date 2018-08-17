@@ -3,7 +3,7 @@ package com.mardomsara.social.app;
 import android.content.Context;
 
 import com.facebook.common.logging.FLog;
-import com.mardomsara.social.ui.views.FontCache;
+import com.mardomsara.x.iconify.FontCache;
 
 /**
  * Created by Hamid on 7/2/2016.

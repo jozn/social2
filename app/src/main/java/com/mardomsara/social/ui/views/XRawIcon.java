@@ -5,11 +5,12 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 import com.mardomsara.social.R;
-import com.mardomsara.social.ui.views.x.IconFonts;
-//import com.mardomsara.social.ui.views.x.IconFonts;
+import com.mardomsara.x.iconify.IconFonts;
+import com.mardomsara.x.iconify.FontCache;
+//import com.mardomsara.x.iconify.IconFonts;
 
 // this class is the master of all Emoji, linker, limiter
-public class XRawIcon extends android.support.v7.widget.AppCompatTextView {
+public class XRawIcon extends android.support.v7.widget.AppCompatTextView{
 	IconFonts iconFonts = IconFonts.IonIcons;
 
 	public XRawIcon(Context context) {

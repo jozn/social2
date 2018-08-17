@@ -67,12 +67,12 @@
         <item name="android:paddingLeft">6dp</item>
     </style>
 
-    <style name="emoji_window_tab">
+<!--    <style name="emoji_window_tab">
         <item name="android:tint">@color/white</item>
         <item name="android:cropToPadding">true</item>
         <item name="android:padding">6dp</item>
         <item name="android:scaleType">fitCenter</item>
-    </style>
+    </style>-->
 
     <style name="minitab_cell">
         <item name="android:layout_gravity">center</item>

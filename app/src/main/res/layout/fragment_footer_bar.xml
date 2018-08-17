@@ -1,61 +1,130 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="54dp"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="horizontal"
               android:background="@color/navbar_background"
+              android:orientation="horizontal"
 
     >
 
-    <com.mardomsara.social.ui.views.XRawIcon
+    <com.mardomsara.social.ui.views.wigets.MaterialRippleLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="\uf47d"
-        style="@style/foot_bar_cell"
-        android:id="@+id/profile"
-        app:xIconFont="IonIcons"
-        />
+        android:layout_margin="0dp"
+        android:background="#00000000"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleDelayClick="false"
 
-    <com.mardomsara.social.ui.views.XRawIcon
+        app:mrl_rippleHover="true"
+
+        >
+
+        <com.mardomsara.social.ui.views.XRawIcon
+            android:id="@+id/profile"
+            style="@style/foot_bar_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="\uf47d"
+            app:xIconFont="IonIcons"
+            android:background="@drawable/bottom_nav_bar"
+            />
+
+    </com.mardomsara.social.ui.views.wigets.MaterialRippleLayout>
+
+    <com.mardomsara.social.ui.views.wigets.MaterialRippleLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="\uf493"
-        style="@style/foot_bar_cell"
-        android:longClickable="true"
-        android:id="@+id/activity"
-        app:xIconFont="IonIcons"
-        />
+        android:layout_margin="0dp"
+        android:background="#00000000"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleDelayClick="false"
 
-    <com.mardomsara.social.ui.views.XRawIcon
+        >
+        <com.mardomsara.social.ui.views.XRawIcon
+            android:id="@+id/activity"
+            style="@style/foot_bar_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="\uf493"
+            app:xIconFont="IonIcons"
+            android:background="@drawable/bottom_nav_bar"
+            />
+
+    </com.mardomsara.social.ui.views.wigets.MaterialRippleLayout>
+
+    <com.mardomsara.social.ui.views.wigets.MaterialRippleLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="\uf4a5"
-        style="@style/foot_bar_cell"
-        android:id="@+id/search"
-        app:xIconFont="IonIcons"
+        android:layout_margin="0dp"
+        android:background="#00000000"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleDelayClick="false"
 
-        />
+        >
+        <com.mardomsara.social.ui.views.XRawIcon
+            android:id="@+id/search"
+            style="@style/foot_bar_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="\uf4a5"
+            app:xIconFont="IonIcons"
+            android:background="@drawable/bottom_nav_bar"
+            />
 
-    <com.mardomsara.social.ui.views.XRawIcon
+    </com.mardomsara.social.ui.views.wigets.MaterialRippleLayout>
+
+    <com.mardomsara.social.ui.views.wigets.MaterialRippleLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="\uf447"
-        style="@style/foot_bar_cell"
-        android:id="@+id/home"
-        app:xIconFont="IonIcons"
-        />
+        android:layout_margin="0dp"
+        android:background="#00000000"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleDelayClick="false"
 
-    <com.mardomsara.social.ui.views.XRawIcon
+        >
+        <com.mardomsara.social.ui.views.XRawIcon
+            android:id="@+id/home"
+            style="@style/foot_bar_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="\uf447"
+            app:xIconFont="IonIcons"
+            android:background="@drawable/bottom_nav_bar"
+            />
+
+    </com.mardomsara.social.ui.views.wigets.MaterialRippleLayout>
+
+    <com.mardomsara.social.ui.views.wigets.MaterialRippleLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="\uf3f9"
-        style="@style/foot_bar_cell"
-        android:id="@+id/chat"
-        app:xIconFont="IonIcons"
-        />
+        android:layout_margin="0dp"
+        android:background="#00000000"
+        app:mrl_rippleOverlay="true"
+        app:mrl_rippleDelayClick="false"
+
+        >
+        <com.mardomsara.social.ui.views.XRawIcon
+            android:id="@+id/chat"
+            style="@style/foot_bar_cell"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="\uf3f9"
+            app:xIconFont="IonIcons"
+            android:background="@drawable/bottom_nav_bar"
+            />
+
+    </com.mardomsara.social.ui.views.wigets.MaterialRippleLayout>
+
+
+
 </LinearLayout>

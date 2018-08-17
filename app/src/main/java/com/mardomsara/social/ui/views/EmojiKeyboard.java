@@ -14,6 +14,7 @@ import com.mardomsara.emojicon.OnEmojiconClickedListener;
 import com.mardomsara.emojicon.emoji.Emojicon;
 import com.mardomsara.social.app.App;
 import com.mardomsara.social.ui.views.x.XEditTextView;
+import com.mardomsara.x.iconify.FontCache;
 
 /**
  * Created by Hamid on 5/15/2016.

@@ -2,11 +2,13 @@ package com.mardomsara.social.nav;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
 import com.mardomsara.social.R;
+import com.mardomsara.social.ui.views.wigets.MaterialRippleLayout;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +23,8 @@ public class FooterBarCell {
 	TextView[] cells;
 	BranchEnum activeBranch;
 	Map<BranchEnum, TextView> cellsMap = new HashMap<>();
+
+	boolean is = false;
 
 	public FooterBarCell(Context context) {
 		root = LayoutInflater.from(context).inflate(R.layout.fragment_footer_bar, null);
@@ -49,10 +53,20 @@ public class FooterBarCell {
 	public void setUpEvents() {
 
 		for (final BranchEnum k : cellsMap.keySet()) {
+			/*if (!is) {
+				MaterialRippleLayout.on(cellsMap.get(k))
+					.rippleColor(Color.BLACK)
+					.rippleDelayClick(false)
+
+					.create();
+			}
+*/
 			cellsMap.get(k).setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
+//					v.setBackgroundResource(R.drawable.nav_icon_pressed);
 					Nav.goToBranch(k);
+
 				}
 			});
 			cellsMap.get(k).setOnLongClickListener(new View.OnLongClickListener() {
@@ -65,16 +79,23 @@ public class FooterBarCell {
 				}
 			});
 		}
+		is  =true;
 	}
 
 	public void activateBranch(BranchEnum bra) {
 		for (BranchEnum k : cellsMap.keySet()) {
-			cellsMap.get(k).setBackgroundColor(getResources().getColor(R.color.navbar_background));
+//			cellsMap.get(k).clic;
+//			cellsMap.get(k).setBackgroundColor(getResources().getColor(R.color.navbar_background));
 			cellsMap.get(k).setTextColor(getResources().getColor(R.color.navbar_icon_font));
+//			cellsMap.get(k).getBackground().setState(new int[]{android.R.attr.state_empty});
+			cellsMap.get(k).setSelected(false);
 		}
 		TextView activeCell = cellsMap.get(bra);
-		activeCell.setBackgroundColor(getResources().getColor(R.color.navbar_background_active));
+//		activeCell.setBackgroundColor(getResources().getColor(R.color.navbar_background_active));
 		activeCell.setTextColor(getResources().getColor(R.color.navbar_icon_font_active));
+//		activeCell.getBackground().setState(new int[]{android.R.attr.state_selected});
+		activeCell.setSelected(true);
+
 	}
 
 	Resources getResources() {

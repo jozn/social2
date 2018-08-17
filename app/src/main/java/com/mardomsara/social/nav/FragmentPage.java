@@ -26,7 +26,8 @@ public abstract class FragmentPage extends BaseFragment {
 		counter++;
 	}
 
-	public abstract View getView(Bundle savedInstanceState);
+	@Nullable
+	public abstract View getView(@Nullable Bundle savedInstanceState);
 
 	@Override
 	public void onAttach(Context context) {
